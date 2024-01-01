@@ -1,0 +1,11 @@
+# Example config file.
+
+[environment]
+preserve_raw_data = true
+database_location = "database/"
+
+[source]
+name_and_source = [
+	["university_results", ""],
+	["transactions", ""]
+]
