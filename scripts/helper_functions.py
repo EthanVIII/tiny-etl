@@ -1,7 +1,7 @@
 
-def list_unprocessed_local_files(file_path):
+def list_unprocessed_local_csvs(file_path):
     from os import listdir
-    from os.path import isfile, join
+    from os.path import isfile, join, splitext
     
     file_list = [file for file 
                  in listdir(file_path) 
@@ -9,7 +9,7 @@ def list_unprocessed_local_files(file_path):
     unprocessed_files = [file_name for file_name 
                          in file_list 
                          if not file_name.startswith("LOADED-")
-                         and os.path.splitext(file_name).1]
+                         and splitext(file_name)[1] == ".csv"]
     return unprocessed_files
 
 def extract_csv(file_name, file_path):
