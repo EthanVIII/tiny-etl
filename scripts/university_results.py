@@ -22,7 +22,7 @@ def transform_data(table):
     })
     table['letter_grade'] = table.apply(lambda x: get_letter_grade(x['score']),
                                         axis = 1)
-    print(table)
+    return table
 
 def load_data(table, cursor, connection):
     pass
